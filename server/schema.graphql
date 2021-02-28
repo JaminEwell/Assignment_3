@@ -1,5 +1,6 @@
 type Query {
   about: String!
+  productList: [Product!]!
 }
 
 type Mutation {
@@ -14,10 +15,10 @@ enum Category {
     Accessories
 }
 
-type Products {
+type Product {
     id: Int!
-    Category: Category!
-    Name: String!
-    Price: Float
-    Image: String
+    name: String
+    price: Float
+    category: Category!
+    image: String
 }

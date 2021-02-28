@@ -22,32 +22,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var initialProducts = [{
-  id: 1,
-  name: 'V-neck shirt',
-  price: '$' + 10.99,
-  category: 'Shirts',
-  image: /*#__PURE__*/React.createElement("a", {
-    href: "https://images.unsplash.com/photo-1598032895397-b9472444bf93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-  }, "View")
-}, {
-  id: 2,
-  name: 'Green Shorts',
-  price: '$' + 16.99,
-  category: 'Jeans',
-  image: /*#__PURE__*/React.createElement("a", {
-    href: "https://images.pexels.com/photos/5693888/pexels-photo-5693888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-  }, "View")
-}];
-var sampleProduct = {
-  name: 'Red Shorts',
-  price: '$' + 6.99,
-  category: 'Jeans',
-  image: /*#__PURE__*/React.createElement("a", {
-    href: "https://images.unsplash.com/photo-1597343781704-dc11f4ffd419?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlZCUyMHNob3J0c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-  }, "View")
-};
-
 var ProductFilter = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductFilter, _React$Component);
 

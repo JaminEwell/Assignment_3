@@ -1,20 +1,3 @@
-const initialProducts = [
-    {
-      id: 1, name: 'V-neck shirt', price: '$' + 10.99, category: 'Shirts',
-      image: <a href="https://images.unsplash.com/photo-1598032895397-b9472444bf93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80">View</a>
-    },
-    {
-        id: 2, name: 'Green Shorts', price: '$' + 16.99, category: 'Jeans',
-        image: <a href="https://images.pexels.com/photos/5693888/pexels-photo-5693888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">View</a>
-    },
-  ];
-
-  const sampleProduct = {
-    name: 'Red Shorts', price: '$' + 6.99, category: 'Jeans',
-    image: <a href="https://images.unsplash.com/photo-1597343781704-dc11f4ffd419?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlZCUyMHNob3J0c3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">View</a>
-  };
-
-
 class ProductFilter extends React.Component {
     render() {
       return (
