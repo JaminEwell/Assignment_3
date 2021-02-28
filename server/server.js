@@ -1,23 +1,26 @@
+const fs = require('fs');
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 
 let aboutMessage = "Inventory Products API v1.0";
 
-const typeDefs = `
-  type Query {
-    about: String!
-  }
-  type Mutation {
-    setAboutMessage(message: String!): String
-  }
-`;
 
 const resolvers = {
   Query: {
     about: () => aboutMessage,
+
   },
   Mutation: {
     setAboutMessage,
+    setProduct,
+  },
+
+  Products: {
+    id: () => aboutProduct,
+    Category: () => aboutProduct,
+    Name: () => aboutProduct,
+    Price: () => aboutProduct,
+    Image: () => aboutProduct,
   },
 };
 
@@ -25,8 +28,12 @@ function setAboutMessage(_, { message }) {
   return aboutMessage = message;
 }
 
+function setProduct(_, { product }) {
+    return aboutProduct = product;
+  }
+
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: fs.readFileSync('./server/schema.graphql', 'utf-8'),
   resolvers,
 });
 

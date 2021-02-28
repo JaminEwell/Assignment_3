@@ -1,0 +1,23 @@
+type Query {
+  about: String!
+}
+
+type Mutation {
+  setAboutMessage(message: String!): String
+}
+
+enum Category {
+    Shirts
+    Jeans
+    Jackets
+    Sweaters
+    Accessories
+}
+
+type Products {
+    id: Int!
+    Category: Category!
+    Name: String!
+    Price: Float
+    Image: String
+}
