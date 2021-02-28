@@ -101,26 +101,31 @@ class ProductFilter extends React.Component {
         this.loadData();
       }
     
-      loadData() {
-        setTimeout(() => {
-          this.setState({ products: initialProducts });
-        }, 500);
-      }
+      // get product data
+      async loadData() {
+        const query = `query {
+          productList {
+            id 
+            category
+            name
+            price
+            image
+          }
+        }`;
+        // add product data
+        const response = await fetch('/graphql', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json'},
+          body: JSON.stringify({ query })
+        });
+        const result = await response.json();
+        this.setState({ issues: result.data.productList });
+       }
 
       createProduct(product) {
         product.id = this.state.products.length + 1;
-        //product.name = this.state.products.name;
         product.price = '$' + product.price;
-        //product.category = this.state.products.category;
-        product.image = <a href="https://images.unsplash.com/photo-1564315254352-f33b576102a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">View</a>
-        //var a = document.createElement('a');
-        //var text = document.createTextNode("View");
-        //a.appendChild(text);
-       // product.image = a;
-        //product.image.appendChild(text);
-        //product.image.href = product.image
-        //var td = document.createElement('td');
-        //product.image = tbody.innerHTML.appendChild(a);
+        product.image = <a href={product.image}>View</a>
         const newProductList = this.state.products.slice();
         newProductList.push(product);
         this.setState({ products: newProductList });
